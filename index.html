@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hearthstone AI Competition</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<div id="header">			
+			
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+
+
+			<!-- Intro 
+				<section id="top" class="one dark cover">
+					<div class="container">
+
+						<header>
+							<h2 class="alt">Hi! This page is under construction. Please check again in a few days.</h2>
+						</header>
+
+						<footer>
+							<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
+						</footer>
+
+					</div>
+				</section>-->
+
+			<!-- About Me -->
+				<section id="about" class="three">
+					<div class="container">
+
+						<header>
+							<h2>Hearthstone AI Competition</h2>
+						</header>
+
+						<!-- <a href="#" class="image featured"><img src="images/EusflatBanner.jpg" alt="" /></a>-->
+																		
+						<p><strong>Competition Results for 2020 are online. Bots will follow next week.</strong></p>
+
+						<p><strong>Please always make sure to download the latest version of the competition framework.</strong></p>
+
+						<p>The collectible online card game Hearthstone features a rich testbed and poses unique demands for generating 
+							artificial intelligence agents. The game is a turn-based card game between two opponents, using constructed 
+							decks of thirty cards along with a selected hero with a unique power. Players use their limited mana crystals 
+							to cast spells or summon minions to attack their opponent, with the goal to reduce the opponent’s health to zero. 
+							The competition aims to promote the stepwise development of fully autonomous AI agents in the context of Hearthstone.</p>
+
+						<p>Entrants will submit agents to participate in one of the two tracks:</p>
+
+						<ul>
+						<li><strong>Premade Deck Playing”-track</strong>: participants will receive a list of six known decks and 
+							three decks unknown prior to your submission. During the evaluation, we will simulate all possible 
+							matchups for at least 100 games to determine the average win-rate for each agent. Determining and using 
+							the characteristics of the player’s and the opponent’s deck to the player’s advantage will help in winning 
+							the game. The following decks will be known in advance (please check their definition in „core-extensions\SabberStoneBasicAI\src\Meta\Decks.cs“)
+							<ul>
+								<li>Aggro Pirate Warrior, Midrange Jade Shaman, Reno Kazakus Mage, Midrange Buff Paladin, Miracle Pirate Rogue, Zoo Discard Warlock</li>
+							</ul>
+						</li>
+						<li><strong>“User Created Deck Playing”-track</strong>: the competition framework allows agents to define their own deck. Finding a deck that can consistently beat a vast amount of other decks will play a key role in this competition track. Additionally, it gives the participants the chance in optimizing the agents’ strategy to the characteristics of their chosen deck</li>
+						</ul>
+
+						<div>As long as the number of submissions remains below 32, we will use a round-robin tournament to determine 
+							the best submissions based on their average win-rate. In case more agents are submitted we will use multiple 
+							smaller round-robin tournaments to determine likely candidates and use a final round-robin tournament for 
+							determining the best three submissions.</div>
+						<div></div>
+						<p>&nbsp;</p>
+
+						<h2>Submission Instructions</h2>
+						<div>To take part in the competition you can send us your agent as .cs file or, in case multiple files 
+							are required, a zip archive or a download link via <a href="mailto:alexander.dockhorn@ovgu.de">e-mail</a>. 
+							The total file size should not be larger than 1 GB and all bots need to satisfy all requirements stated 
+							on the <a href="https://dockhorn.antares.uberspace.de/wordpress/results/">rules</a> subpage.
+							Multiple bots can be submitted, but please indicate if a submission should replace an old submission 
+							or be counted as a new submission. Each participant can have up to 2 final submissions per track.
+							Please be aware that submitted agents are going to be published on this website after the competition 
+							finished. With the submission to this competition, you agree with this procedure.</div>
+						<div></div>
+						<p><strong>Competition Entry Deadline: July 1st 2020 23:59 UTC-12<br>
+						</strong></p>
+						<p>&nbsp;</p>
+
+						<h2>Citation</h2>
+						<p>In case you submit a paper based on this framework we would be happy if you could include the following citation:</p>
+						<p style="margin-left: 24pt; text-indent: -24.0pt;">Dockhorn, A., &amp; Mostaghim, S. (2019). Introducing the Hearthstone-AI Competition, (Section IV), 1–4. Retrieved from http://arxiv.org/abs/1906.04238</p>
+							<pre><code>@article{Dockhorn2019,
+	archivePrefix = {arXiv},
+	arxivId = {1906.04238},
+	author = {Dockhorn, Alexander and Mostaghim, Sanaz},
+	eprint = {1906.04238},
+	month = {may},
+	pages = {1--4},
+	title = {{Introducing the Hearthstone-AI Competition}},
+	url = {http://arxiv.org/abs/1906.04238},
+	year = {2019}
+}</code></pre>
+						</p>
+						<h2 id="organisers">Organizers</h2>
+						The Hearthstone-AI Competition is being organized by:
+						<ul>
+						<li><a href="https://adockhorn.github.io/">Alexander Dockhorn</a>, Queen Mary University of London</li>
+						<li><a href="http://www.is.ovgu.de/Team/Sanaz+Mostaghim.html">Sanaz Mostaghim</a>, Otto-von-Guericke University of Magdeburg</li>
+						</ul>
+						<p>Have questions or suggestions? Feel free to contact us via our <a href="https://groups.google.com/d/forum/the-hearthstone-ai-competition">Q&amp;A Forum</a> or directly sent a mail to the <a href="mailto:a.dockhorn@qmul.ac.uk">competition admin</a>.</p>
+						<h3>Legal</h3>
+						<p>This competition is not associated with Blizzard Entertainment. It is based on the Sabberstone framework which mimics the game Hearthstone and provides access points for the development of AI agents. The framework does not allow to play the original game nor does it connect to the game’s servers in any way.</p>
+						<p>Hearthstone and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</p>
+						<h3>Acknowledgments</h3>
+						<p>We would like to thank the developers of the Sabberstone Framework on which our competition is based on. Special thanks go out to darkfriend77 and Milva for their constant effort in keeping the Sabberstone framework up-to-date. Without your work, this competition would not exist!</p>
+						
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Footer -->
+		<div id="footer">
+
+			<!-- Copyright -->
+				<ul class="copyright">
+					<li><a href="impressum.html">Impressum</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/add_sidebar.js"></script>
+
+	</body>
+</html>

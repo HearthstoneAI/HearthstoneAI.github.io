@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hearthstone AI Competition</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<div id="header">			
+			
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+
+
+			<!-- Intro 
+				<section id="top" class="one dark cover">
+					<div class="container">
+
+						<header>
+							<h2 class="alt">Hi! This page is under construction. Please check again in a few days.</h2>
+						</header>
+
+						<footer>
+							<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
+						</footer>
+
+					</div>
+				</section>-->
+
+			<!-- About Me -->
+				<section id="about" class="three">
+					<div class="container">
+
+						<header>
+							<h2>Rules and Submission Instructions</h2>
+						</header>
+
+						<p>The following files need to be submitted via e-mail or uploaded to github/a 
+                            file-hoster and the link being shared:</p>
+                        <ul>
+                        <li>an Agent class that inherist from Abstract Agent</li>
+                        <li>supporting files of up to 1GB (please contact us in case you need to load a bigger 
+                            database or something like an extremely large Neural Network)</li>
+                        <li>the agent needs to finish the whole turn with a time limit of 30 seconds. Execution 
+                            times for returned moves are removed from the time being used by the agent. In case 
+                            the submitted agent exceeds this limit, it will lose the game.</li>
+                        <li>while the submitted agent can have any nickname, we require the authors to put all
+                             related files in a single namespace or its subspaces. Please use the following 
+                             namespace convention: namespace
+                        <ul>
+                        <li>SabberStoneBasicAI.AIAgents.&lt;your_submission_tag&gt;</li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p>To assure a fair environment we pose the following restrictions on the submissions:</p>
+                        <ul>
+                        <li>agents need to be single threaded. From previous competitions we know that otherwise it 
+                            often comes down to the programmers capabilities.</li>
+                        <li>agents should avoid cheating at all cost. Decisions need to be based on the information 
+                            provided by the POGame object and consist of the current state of the board, your cards, 
+                            the number of cards in your opponent’s deck and the number of cards on your opponent’s 
+                            hand. It is forbidden to look at the opponent’s hand!</li>
+                        </ul>
+                        <p>Agents that do not follow those rules will be excluded from the competition.</p>
+                        <h2><strong>Premade Deck Playing-track</strong>:</h2>
+                        <p>All Participants will receive a list of six known decks and three decks unknown prior to your 
+                            submission. During the evaluation, we will simulate all possible matchups for at least 100 
+                            games to determine the average win-rate for each agent. Determining and using the characteristics 
+                            of the player’s and the opponent’s deck to the player’s advantage will help in winning the game. 
+                            The following decks will be known in advance (please check their definition in 
+                            „core-extensions\SabberStoneBasicAI\src\Meta\Decks.cs“)</p>
+                        <ul>
+                        <li>Aggro Pirate Warrior, Midrange Jade Shaman, Reno Kazakus Mage, Midrange Buff Paladin, 
+                            Miracle Pirate Rogue, Zoo Discard Warlock</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                        <h2><strong>User-Created Deck Playing-track</strong>:</h2>
+                        <p>The competition framework allows agents to define their own deck. Finding a deck that can 
+                            consistently beat a vast amount of other decks will play a key role in this competition track. 
+                            Additionally, it gives the participants the chance to optimize the agents’ strategy to the 
+                            characteristics of their chosen deck.</p>
+                        <ul>
+                        <li>only pre-implemented cards of the competition framework are allowed. See the card lists in 
+                            „SabberStoneCore &gt; src &gt; CardSets“ for a full list of cards.</li>
+                        <li>for building your own decks the same rules apply as for the original game</li>
+                        <li>the Deck needs to be defined as a separate file, which will be placed in 
+                            „SabberStoneCoreAi &gt; src &gt; Meta“. See „SabberStoneCoreAi &gt; src &gt; Meta &gt; Decks“ 
+                            for some examples.</li>
+                        <li>When submitting your agent please submit the complete card-list and reference it in your 
+                            agents <em>preferredDeck</em> variable. Please also make sure to initialize the agent’s 
+                            <em>preferredHero</em> variable.</li>
+                        </ul>
+                        <h2></h2>
+                        <h2>Evaluation</h2>
+                        <p>As long as the number of submissions remains below 32, we will use a round-robin tournament 
+                            to determine the best submissions based on their average win-rate. In case more agents are 
+                            submitted we will use multiple smaller round-robin tournaments to determine likely candidates 
+                            and use a final round-robin tournament for determining the best three submissions.</p>
+                        <p>&nbsp;</p>                                                                                                                      
+                                        
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Footer -->
+		<div id="footer">
+
+			<!-- Copyright -->
+				<ul class="copyright">
+					<li><a href="impressum.html">Impressum</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/add_sidebar.js"></script>
+
+	</body>
+</html>

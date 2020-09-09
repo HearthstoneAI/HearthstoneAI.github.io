@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hearthstone AI Competition</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<div id="header">			
+			
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+
+
+			<!-- Intro 
+				<section id="top" class="one dark cover">
+					<div class="container">
+
+						<header>
+							<h2 class="alt">Hi! This page is under construction. Please check again in a few days.</h2>
+						</header>
+
+						<footer>
+							<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
+						</footer>
+
+					</div>
+				</section>-->
+
+			<!-- About Me -->
+				<section id="about" class="three">
+					<div class="container">
+
+														
+                        <div class="post-header">
+                            <h2 class="post-title">Tutorial</h2>				    				    
+                        </div><!-- .post-header -->
+                                                                                           
+                        <div class="post-content">                                  
+                            <p><strong>This guide was updated to comply with changes made for the 2020 Hearthstone AI competition.</strong></p>
+                            <p>On this page, you will learn how to set up your first agent. During the tutorial, we will quickly summarize the components of the framework and show you how a simple Random Agent is implemented.</p>
+                            <p><strong>Step 1: Important Framework Components</strong></p>
+                            <table style="width: 100%;">
+                            <tbody>
+                            <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                            </tr>
+                            <tr>
+                            <td>Program.cs</td>
+                            <td>The Program class includes the Main function, which is called when the SabberStoneCoreAi is started. The example file includes functions for running single Turns, complete games, and whole tournaments. Feel free to change this according to your needs, since you will just need to submit files that correspond to your agent.</td>
+                            </tr>
+                            <tr>
+                            <td>POGameHandler.cs</td>
+                            <td>The Partial Observation folder contains classes that will be used to ensure that at all times the agents will not be able to see the cards of its opponent. Please note, that any attempt in violating this constraint will lead to the disqualification of the agent.<p></p>
+                            <p>POGameHandler controls the flow of the game. At the beginning of each match the agent’s InitializeGame method will be called. Similarly, the FinalizeGame method is called at the end of each game. During the game, the POGameHandler creates a game-state in which the opponent’s cards will be replaced with a useless card that does nothing. Given this POGame (a partial observable instance of the game-state object) the agent needs to return a single action. After the action was applied, the agent receives an updated POGame instance which allows the agent to react on random results of a card.</p></td>
+                            </tr>
+                            <tr>
+                            <td>POGame.cs</td>
+                            <td>POGame provides access to all visible components of the game. hand, board, and deck cards, as well as current information on the game state such as turn-number or mana can be accessed.<p></p>
+                            <p>The POGame also provides possible moves to the player. An integrated forward model can be used to see the result of the move.</p>
+                            <p>In case you want to simulate your opponent’s turn it is highly advised to replace the dummy-cards on the opponent’s hand and deck with more meaningful cards.</p></td>
+                            </tr>
+                            <tr>
+                            <td>GameStats.cs</td>
+                            <td>The GameStats object stores the number of simulated games, winning statistics and average times per turn.</td>
+                            </tr>
+                            <tr>
+                            <td>AbstractAgent.cs</td>
+                            <td>The AbstractAgent is the base-class for your own Agents. Your agent should inherit this class and implement the following methods.<p></p>
+                            <ul>
+                            <li>InitializeAgent: load files once at the start of the simulation</li>
+                            <li>InitializeGame: initialize data at the start of a game</li>
+                            <li>GetMove: return a non-empty list of moves based on the provided POGame</li>
+                            <li>FinalizeGame: store the result and update the agent after a game</li>
+                            <li>FinalizeGame: store the final model at the end of the simulation</li>
+                            </ul>
+                            <p>In case your agent is participating in the Deck-Building track, we require you to define your preferred Hero and Deck at the top of this file.</p>
+                            <p>Please adhere to the namespace conventions mentioned in the submission guidelines.</p></td>
+                            </tr>
+                            <tr>
+                            <td>RandomAgent.cs</td>
+                            <td>The RandomAgent discussed in Step 3</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <p><strong>Step 2: Setting up the files for your own Agent<br>
+                            </strong></p>
+                            <ul>
+                            <li>Open the src/AIAgent folder in the SabberStoneCoreAi project</li>
+                            <li>You can use and rename the MyAgent.cs file</li>
+                            <li>Please choose a submission_tag to define your namespace. All the files you are going to submit should be using the same namespace or any of its subspaces.</li>
+                            </ul>
+                            <p><strong>Step 3: Implementing a simple Random Agent<br>
+                            </strong></p>
+                            <ul>
+                            <li>Now, let’s add some code to <strong>GetMove</strong>. Using the <strong>poGame</strong> object we can get all possible moves by calling the function <strong>Options()</strong> on the <strong>current player</strong> controller.</li>
+                            <li>We add a private Random object to our agent and initialize it in the InitializeAgent function.</li>
+                            <li>Back in the GetMove function we choose a random option and return it.</li>
+                            <li>The final result should look like this:</li>
+                            </ul>
+                            <p><img class="alignnone size-full wp-image-296" src="https://dockhorn.antares.uberspace.de/wordpress/wp-content/uploads/2020/05/MinimalRandomAgent.png" alt="" srcset="https://dockhorn.antares.uberspace.de/wordpress/wp-content/uploads/2020/05/MinimalRandomAgent.png 627w, https://dockhorn.antares.uberspace.de/wordpress/wp-content/uploads/2020/05/MinimalRandomAgent-300x117.png 300w" sizes="(max-width: 627px) 100vw, 627px" width="627" height="245"></p>
+                            <p><strong>Step 4: Further Example Agents</strong></p>
+                            <ul>
+                            <li>Make sure to study our example agents in „\core-extensions\SabberStoneBasicAI\src\AIAgents\Examples\“ to get accustomed to the framework.</li>
+                            <li>Feel free to download and adapt agents of previous competition years from this webpage. They will require minimal adjustments due to changes in the namespaces of the underlying framework, but this process is fairly easy.</li>
+                            <li>Some of the agents were part of a research paper. This website features a collection of Hearthstone related research papers in the additional resources sub-page.</li>
+                            </ul>
+                            <p><strong>Additional Hints</strong></p>
+                            <ul>
+                            <li>We can simulate the result of our chosen Option by calling „poGame.Simulate(option);“. Keep in mind that some PlayerTasks yield non-deterministic results. For this reason, handle the result of this function with care.</li>
+                            </ul>                                                                                             
+                        </div><!-- .post-content -->
+                    
+                            
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Footer -->
+		<div id="footer">
+
+			<!-- Copyright -->
+				<ul class="copyright">
+					<li><a href="impressum.html">Impressum</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/add_sidebar.js"></script>
+
+	</body>
+</html>
